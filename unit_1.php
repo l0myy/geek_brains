@@ -1,51 +1,85 @@
 
 <?php
 
-class Item
+class Water
 {
-public $id;
-public $desc;
-public $price;
+static $id;
+static $desc;
 
-function view(){
-echo "<h2>$this->desc</h2><p>$this->price</p>";
+
+    function view(){
+        echo "Группа товаров ".$this->desc."<br>";
+        echo "ID группы: ".$this ->id."<br>";
+        }
+
 }
-}
-$a = new Item();
+$a = new Water();
 $a->id = 1;
-$a->desc = 'Описание товара';
-$a->price = '25$';
+$a->desc = 'Вода';
+
 $a->view();
 
 
-class ConstructItem extends Item
+class Cola extends Water
 {
-function __construct($id, $desc,$price){
-$this->id = $id;
-$this->desc = $desc;
-$this->price = $price;
+private $price;
+private $wasPrice;
+
+function __construct($id,$desc,$price,$wasPrice){
+$this->setId($id);
+$this->setDesc($desc);
+$this->setPrice($price);
+$this->setWasPrice($wasPrice);
 }
 
+private function setId ($id){
+    $this->id = $id;
 }
-$b = new ConstructItem(2, 'Описание', 55,100);
+
+private function setDesc ($desc){
+    $this->desc = $desc;
+}
+
+private function setPrice ($price){
+    $this->price = $price;
+}
+
+private function setWasPrice ($wasPrice){
+    $this->wasPrice = $wasPrice;
+}
+
+function getId()
+{
+    return $this->id;
+}
+
+function getDesc()
+{
+    return $this->desc;
+}
+
+function getPrice()
+{
+    return $this->price;
+}
+
+function getWasPrice()
+{
+    return $this->wasPrice;
+}
+
+function view(){
+    echo "Наименование товара: ".$this->getDesc()."<br>";
+    echo "ID товара: ".$this ->getId()."<br>";
+    echo "Цена товара: ".$this->getPrice()."<br>";
+    echo "Старая цена товара: ".$this->getWasPrice()."<br>";
+    }
+
+}
+$b = new Cola(2, 'Coca cola',55,100);
 $b->view();
 
 
-class MathOperations
-{
-const PI = 3.14;
-public function abs($x){
-return ($x >= 0) ? $x : (-1) * $x;
-}
-public function RangeLength($rad){
-return 2 * $rad * self::PI;
-}
-}
-
-echo MathOperations::RangeLength(55);
-
-echo "<p></p>";
-/*
 class A {
     public function foo() {
     static $x = 0;
@@ -60,9 +94,10 @@ class A {
     $a2->foo();
     $a1->foo();
     $a2->foo();
+    //1 2 3 4 - из-за того, что $x static - при вызове функции foo() $x=0 будет пропускаться при каждом следующем вызове.
 
 
-    class A {
+    class C {
         public function foo() {
         static $x = 0;
         echo "\n";
@@ -70,30 +105,14 @@ class A {
     echo "\n";
         }
         }
-        class B extends A {
+        class D extends C {
         }
-        $a1 = new A();
-        $b1 = new B();
+        $a1 = new C();
+        $b1 = new D();
         $a1->foo(); 
         $b1->foo(); 
         $a1->foo(); 
-        $b1->foo();*/
-
-        class A {
-            public function foo() {
-            static $x = 0;
-            echo ++$x;
-            }
-            }
-            class B extends A {
-            }
-            $a1 = new A;
-            $b1 = new B;
-            $a1->foo(); 
-            $b1->foo(); 
-            $a1->foo(); 
-            $b1->foo(); 
-
-
+        $b1->foo();
+        //1 1 2 2 - так как мы создаем 2 разных экземпляра класса, то и увеличиваться $x будет в каждом классе свой.
 
 ?>
