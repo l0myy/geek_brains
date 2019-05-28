@@ -32,19 +32,19 @@ $this->setPrice($price);
 $this->setWasPrice($wasPrice);
 }
 
-private function setId ($id){
+function setId ($id){
     $this->id = $id;
 }
 
-private function setDesc ($desc){
+function setDesc ($desc){
     $this->desc = $desc;
 }
 
-private function setPrice ($price){
+function setPrice ($price){
     $this->price = $price;
 }
 
-private function setWasPrice ($wasPrice){
+function setWasPrice ($wasPrice){
     $this->wasPrice = $wasPrice;
 }
 
