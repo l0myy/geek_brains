@@ -1,0 +1,7 @@
+    <table>
+      <tr>
+        {% for item in nav.header %}
+        <td><a href="{{ item.url }}">{{ item.name|upper }}</a></td>
+        {% endfor %}
+      </tr> 
+    </table>
