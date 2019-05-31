@@ -1,0 +1,11 @@
+
+  <body>
+    <h2>My Photos</h2>
+<div>
+      {% for item in nav.content %}
+       <a href="{{ item.url }}">
+      <img src="{{ item.name }}">
+      </a>
+      {% endfor %}
+</div> 
+  </body>

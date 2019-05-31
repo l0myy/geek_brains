@@ -22,5 +22,9 @@
     <p><a href="unit_2_1.php">Home work 2.1</a></p>
 </div>    
     
+<div>
+    <p><a href="unit_3/index.php">Home work 3</a></p>
+</div>
+
 </body>
 </html>
