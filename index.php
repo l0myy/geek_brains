@@ -18,5 +18,13 @@
     <p><a href="fizzbuzz.php">FizzBuzz</a></p>
 </div>
 
+<div>
+    <p><a href="ishappy.php">Happy ticket</a></p>
+</div>
+
+<div>
+    <p><a href="perfect.php">Perfect number</a></p>
+</div>
+
 </body>
 </html>
