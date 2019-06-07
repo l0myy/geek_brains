@@ -8,23 +8,29 @@
 </head>
 <body>
 
+<div>
+    <p><a href="index.php">Back</a></p>
+</div>
+
 <h1>Anatolii Trofimov</h1>
 
 <div>
-    <p><a href="geek_brains.php">Geek brains courses</a></p>
+    <p><a href="unit_1.php">Home work 1</a></p>
 </div>
 
 <div>
-    <p><a href="fizzbuzz.php">FizzBuzz</a></p>
+    <p><a href="unit_2.php">Home work 2</a></p>
 </div>
 
 <div>
-    <p><a href="ishappy.php">Happy ticket</a></p>
+    <p><a href="unit_2_1.php">Home work 2.1</a></p>
+</div>    
+    
+<div>
+    <p><a href="unit_3/index.php">Home work 3</a></p>
 </div>
 
-<div>
-    <p><a href="perfect.php">Perfect number</a></p>
-</div>
+
 
 </body>
 </html>
